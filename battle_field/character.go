@@ -27,7 +27,7 @@ func (m *Base) DamagePoints(_ CharacterType) int {
 }
 
 func (m *Base) IsDead() bool {
-	return m.Health < 0
+	return m.Health <= 0
 }
 
 func (m *Base) CharacterType() CharacterType {
@@ -54,7 +54,7 @@ type Witch struct {
 func NewWitch() *Witch {
 	return &Witch{
 		Base{
-			Health: 100,
+			Health: 50,
 			Type:   WitchType,
 		},
 	}
